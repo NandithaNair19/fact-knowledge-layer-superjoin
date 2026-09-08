@@ -1,0 +1,8 @@
+pymupdf
+pdfplumber
+rapidfuzz
+fastapi
+uvicorn
+python-multipart
+groq
+python-dotenv

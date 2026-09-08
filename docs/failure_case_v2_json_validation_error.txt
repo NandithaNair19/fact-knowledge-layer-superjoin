@@ -1,0 +1,46 @@
+--- INPUT TEXT ---
+FY24 highlights
+4
+3
+PTL: 30%+ YoY growth with significant improvement in profitability and market share
+1
+Significant improvement in profitability during FY24 - full year EBITDA profitability achieved
+4
+SCS: Doubled service EBITDA profitability over FY23, strong Q4
+5
+TL: 40% YoY revenue growth with service EBITDA profitability improvement
+6
+Sharp YoY reduction in NWC days from 38 to 31 days
+a
+FY24 EBITDA increased by Rs. 578 Cr to Rs. 127 Cr from Rs. (452 Cr) in FY23
+b
+PAT profitable in Q3 FY24; PAT loss reduced by Rs. 759 Cr from Rs. (1,008 Cr) in FY23 
+2
+Express Parcel: 18%+ Service EBITDA profitability; robust growth in key segments
+
+--- PARSED FACTS ---
+Traceback (most recent call last):
+  File "/Users/manojkn/Desktop/fact-knowledge-layer/extraction/fact_extractor.py", line 79, in <module>
+    result = extract_facts_v2(target_page.text)
+  File "/Users/manojkn/Desktop/fact-knowledge-layer/extraction/fact_extractor.py", line 58, in extract_facts_v2
+    response = client.chat.completions.create(
+        model="openai/gpt-oss-20b",
+    ...<4 lines>...
+        ]
+    )
+  File "/Users/manojkn/Desktop/fact-knowledge-layer/venv/lib/python3.13/site-packages/groq/resources/chat/completions.py", line 466, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/openai/v1/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<45 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/manojkn/Desktop/fact-knowledge-layer/venv/lib/python3.13/site-packages/groq/_base_client.py", line 1284, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/manojkn/Desktop/fact-knowledge-layer/venv/lib/python3.13/site-packages/groq/_base_client.py", line 1071, in request
+    raise self._make_status_error_from_response(err.response) from None
+groq.BadRequestError: Error code: 400 - {'error': {'message': "Failed to validate JSON. Please adjust your prompt. See 'failed_generation' for more details.", 'type': 'invalid_request_error', 'code': 'json_validate_failed', 'failed_generation': ''}}

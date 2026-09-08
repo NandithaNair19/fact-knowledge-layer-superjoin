@@ -1,0 +1,22 @@
+--- INPUT TEXT ---
+FY24 highlights
+4
+3
+PTL: 30%+ YoY growth with significant improvement in profitability and market share
+1
+Significant improvement in profitability during FY24 - full year EBITDA profitability achieved
+4
+SCS: Doubled service EBITDA profitability over FY23, strong Q4
+5
+TL: 40% YoY revenue growth with service EBITDA profitability improvement
+6
+Sharp YoY reduction in NWC days from 38 to 31 days
+a
+FY24 EBITDA increased by Rs. 578 Cr to Rs. 127 Cr from Rs. (452 Cr) in FY23
+b
+PAT profitable in Q3 FY24; PAT loss reduced by Rs. 759 Cr from Rs. (1,008 Cr) in FY23 
+2
+Express Parcel: 18%+ Service EBITDA profitability; robust growth in key segments
+
+--- RAW LLM OUTPUT ---
+{"facts":[{"entity":"PTL","attribute":"YoY growth","value":"30%+"},{"entity":"PTL","attribute":"profitability improvement","value":"significant"},{"entity":"PTL","attribute":"market share improvement","value":"significant"},{"entity":"FY24","attribute":"EBITDA profitability","value":"achieved"},{"entity":"SCS","attribute":"service EBITDA profitability","value":"doubled compared to FY23"},{"entity":"SCS","attribute":"Q4 performance","value":"strong"},{"entity":"TL","attribute":"YoY revenue growth","value":"40%"},{"entity":"TL","attribute":"service EBITDA profitability improvement","value":"improved"},{"entity":"NWC","attribute":"days","value":"reduced from 38 to 31"},{"entity":"FY24 EBITDA","attribute":"amount","value":"Rs. 127 Cr"},{"entity":"FY24 EBITDA","attribute":"increase amount","value":"Rs. 578 Cr"},{"entity":"FY24 EBITDA","attribute":"previous amount","value":"Rs. (452 Cr)"},{"entity":"PAT","attribute":"profitability status Q3 FY24","value":"profitable"},{"entity":"PAT","attribute":"loss reduction","value":"Rs. 759 Cr"},{"entity":"PAT","attribute":"previous loss","value":"Rs. (1,008 Cr)"},{"entity":"Express Parcel","attribute":"service EBITDA profitability","value":"18%+"},{"entity":"Express Parcel","attribute":"growth in key segments","value":"robust"}]}
