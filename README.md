@@ -25,31 +25,34 @@ It does this by:
 ---
 
 ## Architecture
+
+```
 PDF Upload
-    │
-    ▼
+   |
+   v
 Text + Table Extraction (PyMuPDF + pdfplumber)
-    │
-    ▼
+   |
+   v
 Fact Extraction (Groq LLM, strict atomic JSON schema)
-    │
-    ▼
-Validation (schema check — malformed entries skipped, not crashed on)
-    │
-    ▼
+   |
+   v
+Validation (schema check -- malformed entries skipped, not crashed on)
+   |
+   v
 Normalization (unit conversion + fuzzy entity name matching)
-    │
-    ▼
+   |
+   v
 Cross-Document Matching (entity + attribute similarity)
-    │
-    ▼
+   |
+   v
 Classification (corroboration / contradiction / reconciled)
-    │
-    ▼
+   |
+   v
 SQLite Storage
-    │
-    ▼
+   |
+   v
 FastAPI endpoints (browser-based /docs UI for upload + inspection)
+```
 ---
 
 ## Tech Stack
