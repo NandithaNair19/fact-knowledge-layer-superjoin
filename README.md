@@ -1,4 +1,55 @@
+# fact-knowledge-layer
 
+A system that reads PDF documents, extracts factual claims (numbers, statements, dates), links every fact back to its exact source evidence, and identifies when facts across different documents corroborate each other, genuinely contradict each other, or only *appear* to contradict due to differing context (like time period or units).
+
+Built for the **Superjoin VIT 2026 Engineering Intern** hiring assignment.
+
+---
+
+## What is this?
+
+Important facts about a company or a country's economy are usually scattered across many documents — a prospectus, an annual report, an earnings call deck, a government survey — each stating things slightly differently, at different points in time, using different units.
+
+This tool answers a simple question: **when two documents both talk about "the same thing," do they actually agree?**
+
+It does this by:
+
+1. Reading a PDF, page by page, extracting both plain text and any tables
+2. Using an LLM to pull out structured factual claims from that text (entity, attribute, value, unit, time period), always tied back to the exact sentence it came from
+3. Validating every extracted fact against a strict schema, so malformed or incomplete extractions are caught and skipped rather than silently corrupting results
+4. Normalizing values (e.g. converting crore/lakh/million to one common base) and entity names (e.g. "Delhivery" vs "Delhivery Limited") so facts from different documents can be compared fairly
+5. Matching facts across two documents that are likely about the same underlying claim
+6. Classifying each matched pair as a **corroboration**, a **contradiction**, or a **reconciled** difference (with a plain-English explanation of why it's reconciled)
+7. Serving all of this through a browser-based API where you can upload PDFs and inspect results directly
+
+---
+
+## Architecture
+PDF Upload
+    │
+    ▼
+Text + Table Extraction (PyMuPDF + pdfplumber)
+    │
+    ▼
+Fact Extraction (Groq LLM, strict atomic JSON schema)
+    │
+    ▼
+Validation (schema check — malformed entries skipped, not crashed on)
+    │
+    ▼
+Normalization (unit conversion + fuzzy entity name matching)
+    │
+    ▼
+Cross-Document Matching (entity + attribute similarity)
+    │
+    ▼
+Classification (corroboration / contradiction / reconciled)
+    │
+    ▼
+SQLite Storage
+    │
+    ▼
+FastAPI endpoints (browser-based /docs UI for upload + inspection)
 ---
 
 ## Tech Stack
