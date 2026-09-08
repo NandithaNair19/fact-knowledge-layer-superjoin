@@ -205,7 +205,7 @@ You'll get back every matched fact pair, labeled `corroboration`, `contradiction
 ---
 ## Video Demo
 
-[text](https://drive.google.com/file/d/1k-fUOzvf6L9TG1qt1woLum-M05phhepV/view?usp=sharing)
+[click here to open demo video](https://drive.google.com/file/d/1k-fUOzvf6L9TG1qt1woLum-M05phhepV/view?usp=sharing)
 
 ---
 ## Approach
