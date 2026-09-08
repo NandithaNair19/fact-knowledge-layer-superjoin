@@ -203,7 +203,11 @@ You'll get back every matched fact pair, labeled `corroboration`, `contradiction
 - **GET /facts/{doc_id}** — view all facts extracted from one specific document
 
 ---
+## Video Demo
 
+[text](https://drive.google.com/file/d/1k-fUOzvf6L9TG1qt1woLum-M05phhepV/view?usp=sharing)
+
+---
 ## Approach
 
 ### Why an atomic fact schema
