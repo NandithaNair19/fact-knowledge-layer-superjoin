@@ -4,3 +4,4 @@ __pycache__/
 *.db
 *.pyc
 .DS_Store
+uploaded_pdfs/
