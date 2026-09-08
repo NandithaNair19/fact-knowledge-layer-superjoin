@@ -204,12 +204,6 @@ You'll get back every matched fact pair, labeled `corroboration`, `contradiction
 
 ---
 
-## Video Demo
-
-[LINK HERE — 3 minutes or less, showing a PDF being processed and the four required cases]
-
----
-
 ## Approach
 
 ### Why an atomic fact schema
