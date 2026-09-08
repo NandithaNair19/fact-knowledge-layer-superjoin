@@ -83,7 +83,9 @@ if __name__ == "__main__":
     )
 
     for label, (fa, fb) in [("CORROBORATE test", pair_corroborate), ("CONTRADICT test", pair_contradict), ("RECONCILE test", pair_reconcile)]:
-        print(f"--- {label} ---")
+        print(f"\n--- {label} ---")
+        print(f"  Fact A: {fa['entity']} / {fa['attribute']} = {fa['value']} {fa['unit']} ({fa['temporal_scope']})")
+        print(f"  Fact B: {fb['entity']} / {fb['attribute']} = {fb['value']} {fb['unit']} ({fb['temporal_scope']})")
         result = classify_pair(fa, fb)
-        print(result)
-        print()
+        print(f"  Result: {result['relationship'].upper()}")
+        print(f"  Explanation: {result['explanation']}")
